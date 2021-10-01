@@ -30,10 +30,10 @@
 	<div class="words">
 
 
-<form autocomplete="off">
+<form id="autoc" autocomplete="off">
 
 <div class="autocomplete">
-		<input type="text" id="search" placeholder="search..." style="width: 240px;height:32px;display:block;color:#000;top:20px;left: 0;right: 0; margin: 0 auto;margin-top: 20px;">
+		<input type="text" id="search" placeholder="search..." onkeypress="handle" style="width: 240px;height:32px;display:block;color:#000;top:20px;left: 0;right: 0; margin: 0 auto;margin-top: 20px;">
 		
 
 </div>
@@ -41,14 +41,15 @@
 
 <div style="margin: 0 auto; left: 0; right: 0;position: absolute;top:40px;text-align: center;">
 
-<button onclick="search()" width="74" height="74" style="text-align:center;font-weight:bold;cursor:pointer;left: 0;right:0;margin: 0 auto;background: transparent;margin-top:0;text-decoration: none; border: 0;outline: none;"><img id="butt" src='butler.svg' height='74'  width='74' style= "margin: 0 auto;left: 0;right:0;text-decoration: none; border: 0;outline: none;text-align: center;"></button>
+<button id="searcht" onclick="search()" width="74" height="74" style="text-align:center;font-weight:bold;cursor:pointer;left: 0;right:0;margin: 0 auto;background: transparent;margin-top:0;text-decoration: none; border: 0;outline: none;"><img id="butt" src='butler.svg' height='74'  width='74' style= "margin: 0 auto;left: 0;right:0;text-decoration: none; border: 0;outline: none;text-align: center;"></button>
   
 	</div></div>
 	
 	
 	<div class="word">
 		<h3 id="word_text"></h3>
-		<p id="definition"></p>
+			<div style="height: 320px; overflow-y: hidden">
+		<p id="definition"></p></div>
 	
 		
 	</div>
@@ -64,9 +65,28 @@
 </html>
 
 <script>
-
+$("#autoc").submit(function() {
+    search($("#searcht").get(0));
+    return false;
+});
+document.getElementById('autoc').addEventListener('submit', function(e) {
+    search(document.getElementById('searcht'));
+    e.preventDefault();
+}, false);
 autocomplete(document.getElementById("search"), dictionary);
 
+    function handle(e){
+        if(e.key === "Enter"){
+           search();
+        }
+
+        return false;
+    }
+        $(function() {
+            $('input').keyup(function() {
+                this.value = this.value.toLocaleUpperCase();
+            });
+        });
 /*
 $( "#expander" ).click(function() {
   $( "#taco" ).toggle( "fast", function() {
