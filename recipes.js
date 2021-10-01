@@ -677,7 +677,7 @@ var dictionary = [
 { word:"IMPERIAL FIZZ", def:" 1 oz. Lemon Juice ½ oz. Light Rum 1½ oz. Whiskey (Bourbon or Rye) 1 tsp Superfi ne Sugar (or Simple Syrup) Club Soda <br><br>Shake fi rst four ingredi- ents with ice and strain into highball glass <br><br>Add two ice cubes <br><br>Fill with club soda and stir.",},
 { word:"INCIDER COCKTAIL", def:" 1½ oz. Whiskey Apple Cider <br><br>Mix whiskey with a gener- ous helping of apple cider in old- fashioned glass Top with ice and stir Garnish with a slice of apple.",},
 { word:"INCOME TAX COCKTAIL", def:" 1½ tsps Dry Vermouth 1½ tsps Sweet Vermouth 1 oz. Gin 1 dash Bitters 1 oz. Orange Juice <br><br>Shake with ice and strain into chilled cocktail glass.",},
-{ word:"INDIAN SUMMER", def:" 2 oz. Apple Schnapps Hot Apple Cider Wet rim of sour glass and dip in cinnamon <br><br>Add schnapps and top off with cider Garnish with a cinna- mon stick, if desired.",},
+{ word:"INDIAN SUMMER", def:" 2 oz. Apple Schnapps Hot Apple Cider <br><br>Wet rim of sour glass and dip in cinnamon <br><br>Add schnapps and top off with cider Garnish with a cinna- mon stick, if desired.",},
 { word:"INTERNATIONAL INCIDENT", def:" ¼ oz. Vodka ¼ oz. Coffee Liqueur ¼ oz. Amaretto ¼ oz. Hazelnut Liqueur ½ oz. Irish Cream Liqueur <br><br>Shake with ice and strain into chilled shot glass.",},
 { word:"IRISH CHARLIE", def:" 1 oz. Irish Cream Liqueur 1 oz. Crème de Menthe (White) <br><br>Stir with ice and strain into chilled cordial glass.",},
 { word:"IRISH COFFEE", def:" 1½ oz. Irish Whiskey Hot Coffee Sugar to taste <br><br>Into Irish coffee glass rimmed with sugar, pour Irish whiskey <br><br>Fill to within ½ inch of top with cof- fee <br><br>Add sugar, if desired Cover surface to brim with whipped cream.",},
