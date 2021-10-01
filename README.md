@@ -1,7 +1,7 @@
 # Butler-Cocktails-JS
 Cocktail recipes for your site!
 <br><br>
-![buttlerpreview](https://user-images.githubusercontent.com/16135535/135518181-96b13310-bffb-41e3-901b-fdff76253e9d.png)
+![mixer](https://user-images.githubusercontent.com/16135535/135644593-6d9e982e-bba9-480d-bdaf-648e7e467bde.png)
 <br>
 <br>
 -Random drink at each page reload<br>
