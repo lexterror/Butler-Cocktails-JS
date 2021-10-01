@@ -1494,6 +1494,9 @@ var dictionary = [
 { word:"YOLANDA", def:" ½ oz. Brandy ½ oz. Gin ½ oz. Anisette 1 oz. Sweet Vermouth 1 dash Grenadine <br><br>Shake with ice and strain into chilled cocktail glass Garnish with a twist of orange peel.",},
 { word:"ZERO MIST", def:" 2 oz. Crème de Menthe 1 oz. Water For each serving, chill liqueur and water in freezer compartment of refrigerator for 2 hours or longer (does not have to be frozen solid) <br><br>Serve in cocktail glasses.",},
 { word:"ZOMBIE", def:" 1 tsp Brown Sugar 1 oz. Lemon Juice 1 oz. Lime Juice 1 oz. Pineapple Juice 1 oz. Passion Fruit Syrup 1 dash Angostura Bitters 1 oz. Gold Rum 1 oz. 151-proof Rum 1 oz. White Rum <br><br>Dissolve brown sugar in juices <br><br>Shake all ingredients with ice and pour into chilled Collins glass Garnish with a mint sprig.",},
+/* New Recipes */
+{ word:"MIDORI SOUR", def:" 1 oz. Midori, 1 oz. Vodka, 1/2 oz. Lemon Juice, 1/2 oz. Lime Juice, Club Soda, Lemon Wheel<br><br>Add the Midori, vodka and lemon and lime juices to a Collins glass with ice.<br><br>Stir to combine, then top with the soda water.<br><br>Garnish with a lemon wheel.",},
+{ word:"REBUJOTE", def:" 1 oz. Fino Jarana, 1 oz. Greenall's London Dry Gin, 3/4 oz. Lemon Juice, 3/4 oz. Simple Syrup, 2 drops of Orange Bitters, Club Soda<br><br>Shake and serve in Collins glass, then top with club soda and garnish with orange wheel.",},
 
 
 
