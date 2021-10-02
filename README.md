@@ -8,6 +8,7 @@ Cocktail recipes for your site!
 -Over 1400 cocktail recipes<br>
 -Find your favorite drink<br>
 -Auto-complete<br>
+-Filter Ingredients<br>
 -Add new drinks!<br>
 -Small file size < 1MB<br><br>
 
