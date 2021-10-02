@@ -6,6 +6,9 @@
   <meta charset='utf-8' />
 	<title>Butler Cocktails JS</title>
 <link rel="stylesheet" type="text/css" href="stylez.css">
+ <link href="css/perfect-scrollbar.css" rel="stylesheet">
+  <!-- The Perfect Scrollbar JS files -->
+  <script src="js/perfect-scrollbar.js"></script>
 <style>
 	body{
 		
@@ -24,7 +27,7 @@
 <script src="dictionary.js"></script>
 <script src="projects/recipes.js"></script>
 
-<div style="top:24px;position:absolute;margin: 0 auto; right: 0; left: 0;">
+<div style="top:0px;position:absolute;margin: 0 auto; right: 0; left: 0;">
 
 <div class="wrapper" id="taco" style="overflow-x:hidden;">
 	<div class="words">
@@ -48,13 +51,14 @@
 	
 	<div class="word">
 		<h3 id="word_text"></h3>
-			<div style="height: 300px; overflow-y:auto;overflow-x:hidden;margin-top:30px;">
+			<div id="purf" style="height: 150px; overflow-y:auto;overflow-x:hidden;position:absolute;width:240px;top:190px";>
 		<p id="definition"></p></div>
+	
 	
 		
 	</div>
-	
-<div style="width: 240px; left: 0; right: 0; position: absolute;margin: 0 auto;background: #111;background-size: 280px; border-radius: 5px; height: 130px;padding: 10px;border: 2px solid #aa0000;">
+
+<div style="width: 240px; left: 0; right: 0; position: absolute;margin: 0 auto;background-size: 280px; border-radius: 5px; height: 150px;padding: 10px;top:350px;">
 <select id="vodka" name="vodka" form="vodka" class="vodka" style="background: #333;color: #fff;">
   <option value="vodkay">Vodka (Y)</option>
   <option value="vodkan">Vodka (N)</option>
@@ -75,11 +79,14 @@
   <option value="tequilay">Tequila (Y)</option>
   <option value="tequilan">Tequila (N)</option>
 </select></div><br>
-<button style="width: 240px; left:0;right: 0;margin: 0 auto;position: absolute;margin-top: 60px;background: #333;color: #fff;" onclick="fingredients();">Filter Ingredients</button>
-<button style="width: 240px; left:0;right: 0;margin: 0 auto;position: absolute;margin-top: 90px;background: #333;color: #fff;" onclick="reset();">Reset Ingredients</button>	
+<button style="width: 240px; left:0;right: 0;margin: 0 auto;position: absolute;margin-top: 240px;background: #333;color: #fff;" onclick="fingredients();">Filter Ingredients</button>
+<button style="width: 240px; left:0;right: 0;margin: 0 auto;position: absolute;margin-top: 270px;background: #333;color: #fff;" onclick="reset();">Reset Ingredients</button>	
 	
 	
 </div>
+	
+	
+	
  </div>
  </div>
 </div>
@@ -91,6 +98,7 @@
 </html>
 
 <script>
+const ps = new PerfectScrollbar('#purf');
 $("#autoc").submit(function() {
     search($("#searcht").get(0));
     return false;
