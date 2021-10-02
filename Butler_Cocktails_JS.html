@@ -53,6 +53,32 @@
 	
 		
 	</div>
+	
+<div style="width: 240px; left: 0; right: 0; position: absolute;margin: 0 auto;">
+<select id="vodka" name="vodka" form="vodka" class="vodka">
+  <option value="vodkay">Vodka (Y)</option>
+  <option value="vodkan">Vodka (N)</option>
+</select>
+<select id="rum" name="rum" form="rum" class="rum">
+  <option value="rumy">Rum (Y)</option>
+  <option value="rumn">Rum (N)</option>
+</select>
+<select id="gin" name="gin" form="gin" class="gin">
+  <option value="giny">Gin (Y)</option>
+  <option value="ginn">Gin (N)</option>
+</select>
+<select id="whiskey" name="whiskey" form="whiskey" class="whiskey">
+  <option value="whiskeyy">Whiskey (Y)</option>
+  <option value="whiskeyn">Whiskey (N)</option>
+</select>
+<select id="tequila" name="tequila" form="tequila" class="tequila">
+  <option value="tequilay">Tequila (Y)</option>
+  <option value="tequilan">Tequila (N)</option>
+</select></div>
+<button style="width: 240px; left:0;right: 0;margin: 0 auto;position: absolute;margin-top: 60px;" onclick="fingredients();">Filter Ingredients</button>
+<button style="width: 240px; left:0;right: 0;margin: 0 auto;position: absolute;margin-top: 90px;" onclick="reset();">Reset Ingredients</button>	
+	
+	
 </div>
  </div>
  </div>
@@ -95,3 +121,579 @@ $( "#expander" ).click(function() {
 });*/ 
 // $("#taco").toggle();
 </script>		
+
+
+
+<script>
+
+function reset() {
+	 dictionary = dictorig;
+	 autocomplete(document.getElementById("search"), dictorig);
+tequila = 1;
+vodka = 1;
+rum = 1;
+tequila = 1;
+gin = 1;
+$('#vodka').prop('selectedIndex', 0);
+$('#rum').prop('selectedIndex', 0);
+$('#gin').prop('selectedIndex', 0);
+$('#tequila').prop('selectedIndex', 0);
+$('#whiskey').prop('selectedIndex', 0);
+
+  document.getElementById("vodka").disabled=false;
+   document.getElementById("rum").disabled=false;
+    document.getElementById("gin").disabled=false;
+  document.getElementById("tequila").disabled=false;
+   document.getElementById("whiskey").disabled=false;
+  
+}
+
+var tequila = 1;
+var vodka = 1;
+var rum = 1;
+var tequila = 1;
+var gin = 1;
+
+var dictorig = dictionary;
+var dictomod = dictionary;
+
+const selectElement = document.querySelector('#vokda');
+
+function fingredients() {
+
+var select1 = document.getElementById('vodka');
+var value1 = select1.options[select1.selectedIndex].value;
+
+var select2 = document.getElementById('rum');
+var value2 = select2.options[select2.selectedIndex].value;
+
+var select3 = document.getElementById('tequila');
+var value3 = select3.options[select3.selectedIndex].value;
+
+var select4 = document.getElementById('gin');
+var value4 = select4.options[select4.selectedIndex].value;
+
+var select5 = document.getElementById('whiskey');
+var value5 = select5.options[select5.selectedIndex].value;
+
+if (value1 == "vodkay")
+vodka = 1;
+if (value1 == "vodkan")
+vodka = 0;
+
+if (value2 == "rumy")
+rum = 1;
+if (value2 == "rumn")
+rum = 0;
+
+if (value3 == "tequilay")
+tequila = 1;
+if (value3 == "tequilan")
+tequila = 0;
+
+if (value4 == "giny")
+gin = 1;
+if (value4 == "ginn")
+gin = 0;
+
+if (value5 == "whiskeyy")
+whiskey = 1;
+if (value5 == "whiskeyn")
+whiskey = 0;
+/*
+  if (selectElement.value == "vodkay")
+  {
+  //   dictionary.JSON.filter(({ def }) => $(":contains(Vodka)"));
+   //dictionary.JSON.filter(({ myFavoriteSport }) => myFavoriteSport === 'Vodka')
+
+	 dictionary = dictorig;
+	 autocomplete(document.getElementById("search"), dictorig);
+  } */
+  
+  
+  if (vodka == 0 && rum == 1 && tequila == 1 && gin == 1 && whiskey == 1)
+  {
+   //  dictionary.filter(d => d.def == (Vodka));
+   //  dictionary.JSON.filter(({ def }) => $(":not:contains(Vodka)"));
+/*var uniqueGroups = {};
+$.each(dictionary, function() {
+  uniqueGroups[this.word] = this.def;
+});     */
+	 //dictomod = dictionary.filter(f => f.def.indexOf("Vodka") == -1);
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+	
+	//const newbie = dictionary.filter(word => (word.def.includes('Vodka')));
+	// dictionary = newbie;
+	
+	 //	const newbie = dictionary.filter(item => dictionary.every(f => f.word.includes(item[f.def.includes('Vodka')])));
+	  //  dictionary = newbie;
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+//var str = JSON.stringify(dictionary, undefined, 4);
+
+// display pretty printed object in text area:
+//document.getElementById('mytextarea').innerHTML = str;
+		
+  }
+  
+   if (vodka == 1 && rum == 0 && tequila == 1 && gin == 1 && whiskey == 1)
+  {
+   //  dictionary.filter(d => d.def == (Vodka));
+   //  dictionary.JSON.filter(({ def }) => $(":not:contains(Vodka)"));
+/*var uniqueGroups = {};
+$.each(dictionary, function() {
+  uniqueGroups[this.word] = this.def;
+});     */
+	 //dictomod = dictionary.filter(f => f.def.indexOf("Vodka") == -1);
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+	
+	//const newbie = dictionary.filter(word => (word.def.includes('Vodka')));
+	// dictionary = newbie;
+	
+	 //	const newbie = dictionary.filter(item => dictionary.every(f => f.word.includes(item[f.def.includes('Vodka')])));
+	  //  dictionary = newbie;
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+//var str = JSON.stringify(dictionary, undefined, 4);
+
+// display pretty printed object in text area:
+//document.getElementById('mytextarea').innerHTML = str;
+		
+  }
+  
+  if (vodka == 1 && rum == 1 && tequila == 0 && gin == 1 && whiskey == 1)
+  {
+   //  dictionary.filter(d => d.def == (Vodka));
+   //  dictionary.JSON.filter(({ def }) => $(":not:contains(Vodka)"));
+/*var uniqueGroups = {};
+$.each(dictionary, function() {
+  uniqueGroups[this.word] = this.def;
+});     */
+	 //dictomod = dictionary.filter(f => f.def.indexOf("Vodka") == -1);
+	 const zion = d => d.word && d.def.indexOf("Tequila") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+	
+	//const newbie = dictionary.filter(word => (word.def.includes('Vodka')));
+	// dictionary = newbie;
+	
+	 //	const newbie = dictionary.filter(item => dictionary.every(f => f.word.includes(item[f.def.includes('Vodka')])));
+	  //  dictionary = newbie;
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+//var str = JSON.stringify(dictionary, undefined, 4);
+
+// display pretty printed object in text area:
+//document.getElementById('mytextarea').innerHTML = str;
+		
+  }  
+  
+  if (vodka == 1 && rum == 1 && tequila == 1 && gin == 0 && whiskey == 1)
+  {
+   //  dictionary.filter(d => d.def == (Vodka));
+   //  dictionary.JSON.filter(({ def }) => $(":not:contains(Vodka)"));
+/*var uniqueGroups = {};
+$.each(dictionary, function() {
+  uniqueGroups[this.word] = this.def;
+});     */
+	 //dictomod = dictionary.filter(f => f.def.indexOf("Vodka") == -1);
+	 const zion = d => d.word && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+	
+	//const newbie = dictionary.filter(word => (word.def.includes('Vodka')));
+	// dictionary = newbie;
+	
+	 //	const newbie = dictionary.filter(item => dictionary.every(f => f.word.includes(item[f.def.includes('Vodka')])));
+	  //  dictionary = newbie;
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+//var str = JSON.stringify(dictionary, undefined, 4);
+
+// display pretty printed object in text area:
+//document.getElementById('mytextarea').innerHTML = str;
+		
+  }  
+  
+  
+  if (vodka == 1 && rum == 1 && tequila == 1 && gin == 1 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+
+//RUN 2  
+
+ 
+  if (vodka == 0 && rum == 0 && tequila == 1 && gin == 1 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+  
+   
+  if (vodka == 1 && rum == 0 && tequila == 0 && gin == 1 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+  
+ if (vodka == 1 && rum == 1 && tequila == 0 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+ if (vodka == 1 && rum == 1 && tequila == 1 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Gin") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+
+ if (vodka == 0 && rum == 1 && tequila == 0 && gin == 1 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Tequila") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+
+ if (vodka == 1 && rum == 0 && tequila == 1 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1 && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+
+ if (vodka == 1 && rum == 1 && tequila == 0 && gin == 1 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+ if (vodka == 0 && rum == 1 && tequila == 1 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+  if (vodka == 1 && rum == 0 && tequila == 1 && gin == 1 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+
+//RUN 3 (2 more to go)
+
+
+ if (vodka == 0 && rum == 0 && tequila == 0 && gin == 1 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+  if (vodka == 1 && rum == 0 && tequila == 0 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  } 
+  
+  
+  if (vodka == 1 && rum == 1 && tequila == 0 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Gin") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }   
+  
+   if (vodka == 0 && rum == 0 && tequila == 1 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }    
+  
+    if (vodka == 1 && rum == 0 && tequila == 0 && gin == 1 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }     
+  
+    if (vodka == 1 && rum == 0 && tequila == 1 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Rum") == -1 && d.def.indexOf("Gin") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }     
+     if (vodka == 0 && rum == 0 && tequila == 1 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Gin") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }     
+  
+     if (vodka == 0 && rum == 0 && tequila == 1 && gin == 1 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }  
+  
+     if (vodka == 0 && rum == 1 && tequila == 1 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Gin") == -1 && d.def.indexOf("Whiskey") == -1;
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }  
+  
+  //RUN 4 FINAL
+  
+     if (vodka == 0 && rum == 0 && tequila == 0 && gin == 0 && whiskey == 1)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Gin") == -1;
+	 
+	 
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }    
+  
+     if (vodka == 1 && rum == 0 && tequila == 0 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Whiskey") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Gin") == -1;
+	 
+	 
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }    
+  
+     if (vodka == 0 && rum == 1 && tequila == 0 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Whiskey") == -1 && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Tequila") == -1 && d.def.indexOf("Gin") == -1;
+	 
+	 
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }  
+  
+ 
+     if (vodka == 0 && rum == 0 && tequila == 1 && gin == 0 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Whiskey") == -1 && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Gin") == -1;
+	 
+	 
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }  
+  
+     if (vodka == 0 && rum == 0 && tequila == 0 && gin == 1 && whiskey == 0)
+  {
+
+	 const zion = d => d.word && d.def.indexOf("Whiskey") == -1 && d.def.indexOf("Vodka") == -1 && d.def.indexOf("Rum") == -1 && d.def.indexOf("Tequila") == -1;
+	 
+	 
+	 const newbie = dictionary.filter(zion);
+	
+
+
+dictionary = newbie;
+autocomplete(document.getElementById("search"), dictionary);
+
+		
+  }  
+  
+    document.getElementById("vodka").disabled=true;
+   document.getElementById("rum").disabled=true;
+    document.getElementById("gin").disabled=true;
+  document.getElementById("tequila").disabled=true;
+   document.getElementById("whiskey").disabled=true;
+  
+};
+/*
+let filtered = jsondata.filter(item =>        // filter jsondata
+       filterArray.every( f =>                // so every member of filter array
+            f.value.includes(item[f.id])) )
+*/
+</script>
