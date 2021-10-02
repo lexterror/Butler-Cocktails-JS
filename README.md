@@ -14,4 +14,4 @@ Cocktail recipes for your site!
 
 Live Demo @: 
 
-http://elounge.org
+http://electrolex.myartsonline.com/butler/Butler_Cocktails_JS.html
