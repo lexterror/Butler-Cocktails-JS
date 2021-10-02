@@ -38,7 +38,7 @@ input[type=submit] {
 }
 .autocomplete-items {
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: auto;
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
@@ -119,7 +119,7 @@ input[type=submit] {
 	
 .wrapper {
 		width: 280px;
-		height: 533px;
+		height: 700px;
 		font-family: Archivo;
 		color: #fff;
 		background:url("bg.svg");
